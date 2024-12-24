@@ -1,163 +1,227 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>dont.do</title>
 
-    <style>
-      body {
-        background: #282828;
-        color: #fff;
-        font-family: 'Proxima Nova', 'Helvetica Neue', helvetica, arial,
-          sans-serif;
-        font-weight: 300;
-        font-size: 14px;
-        line-height: 1.5;
-        padding-top: 2rem;
-      }
+<head>
+  <meta charset="UTF-8" />
 
-      footer {
-        text-align: center;
-      }
-      footer img {
-        width: 30px;
-        height: auto;
-        opacity: 0.35;
-      }
-      footer small {
-        color: #506479;
-        font-size: 0.9rem;
-      }
+  <!-- add mobile view support -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dont.do</title>
 
-      h1 {
-        color: #506479;
-        font-size: 2.4rem;
-        text-align: center;
-        letter-spacing: 0.3rem;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        line-height: 1;
-      }
+  <style>
+    body {
+      background: #282828;
+      color: #fff;
+      font-family: 'Proxima Nova', 'Helvetica Neue', helvetica, arial,
+        sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.5;
+      padding-top: 2rem;
+    }
 
-      p {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
+    .content {
+      transition: transform 0.3s ease-out;
+      will-change: transform;
+    }
 
-      .window {
-        width: 80%;
-        margin: 20px auto 2rem;
-        box-shadow: 0 0.25rem 0.5rem #00000040;
-        border-radius: 0 0 0.1rem 0.1rem;
-      }
+    footer {
+      text-align: center;
+    }
 
-      .bar {
-        background: #191919;
-        height: 36px;
-        border-radius: 0.5rem 0.5rem 0 0;
-      }
+    footer img {
+      width: 30px;
+      height: auto;
+      opacity: 0.35;
+    }
 
-      .btn::before,
-      .btn::after,
-      .btn {
-        width: 12px;
-        height: 12px;
-        border-radius: 100%;
-        display: block;
-      }
+    footer small {
+      color: #506479;
+      font-size: 0.9rem;
+    }
 
-      .btn {
-        background: #f6b73e;
-        position: relative;
-        margin-left: 38px;
-        top: 12px;
-      }
-      .btn::before,
-      .btn::after {
-        content: ' ';
-        position: absolute;
-      }
-      .btn::before {
-        background: #f55551;
-        margin-left: -20px;
-      }
-      .btn::after {
-        background: #32c146;
-        margin-left: 20px;
-      }
+    h1 {
+      color: #506479;
+      font-size: 2.4rem;
+      text-align: center;
+      letter-spacing: 0.3rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
 
-      .body {
-        height: 10rem;
-        background: #232323;
-        padding: 18px;
-      }
-      .body pre {
-        margin: 0;
-      }
-      .body .pulse {
-        -webkit-animation: pulse 1s ease-in-out infinite;
-        -moz-animation: pulse 1s ease-in-out infinite;
-        animation: pulse 1s ease-in-out infinite;
-      }
+    p {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-      @-webkit-keyframes pulse {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-      @-moz-keyframes pulse {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-      @keyframes pulse {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-      .command {
-        color: #32c146;
+    .window {
+      width: 80%;
+      margin: 20px auto 2rem;
+      box-shadow: 0 0.25rem 0.5rem #00000040;
+      border-radius: 0 0 0.1rem 0.1rem;
+    }
+
+    .bar {
+      background: #191919;
+      height: 36px;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .btn::before,
+    .btn::after,
+    .btn {
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      display: block;
+    }
+
+    .btn {
+      background: #f6b73e;
+      position: relative;
+      margin-left: 38px;
+      top: 12px;
+    }
+
+    .btn::before,
+    .btn::after {
+      content: ' ';
+      position: absolute;
+    }
+
+    .btn::before {
+      background: #f55551;
+      margin-left: -20px;
+    }
+
+    .btn::after {
+      background: #32c146;
+      margin-left: 20px;
+    }
+
+    .body {
+      height: 10rem;
+      background: #232323;
+      padding: 18px;
+    }
+
+    .body pre {
+      margin: 0;
+    }
+
+    .body .pulse {
+      -webkit-animation: pulse 1s ease-in-out infinite;
+      -moz-animation: pulse 1s ease-in-out infinite;
+      animation: pulse 1s ease-in-out infinite;
+    }
+
+    @-webkit-keyframes pulse {
+      0% {
+        opacity: 0;
       }
 
-      .comment {
-        opacity: 0.5;
+      50% {
+        opacity: 1;
       }
-    </style>
-  </head>
 
-  <body>
-    <div class="window">
-      <div class="bar">
-        <div class="btn"></div>
-      </div>
-      <div class="body">
-        <pre>
-          <div class="comment"># dont.do</div><div class="prompt">like i said</div><div class="prompt"><span class="command">please@dont.do</span><span class="pulse">_</span></div></pre>
-      </div>
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @-moz-keyframes pulse {
+      0% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .command {
+      color: #32c146;
+    }
+
+    .comment {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body class="content">
+  <div class="window">
+    <div class="bar">
+      <div class="btn"></div>
     </div>
-  </body>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7XTHM9SE3N"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7XTHM9SE3N');
-  </script>
+    <div class="body">
+      <pre>
+          <div class="comment"># dont.do</div><div class="prompt">like i said</div><div class="prompt"><span class="command">please@dont.do</span><span class="pulse">_</span></div></pre>
+    </div>
+  </div>
+</body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7XTHM9SE3N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-7XTHM9SE3N');
+</script>
+<script>
+
+  const content = document.querySelector('.content');
+
+  // Tıklama olayını dinle
+  document.body.addEventListener('mousedown', (event) => {
+    const { clientX, clientY } = event; // Tıklama koordinatları
+    const { innerWidth, innerHeight } = window;
+
+    // Koordinatlara göre dönüş açısı hesaplama (-15 ile 15 derece arasında)
+    const rotateX = ((clientY / innerHeight) - 0.5) * -8; // Yukarı/Aşağı bükülme
+    const rotateY = ((clientX / innerWidth) - 0.5) * 8;  // Sağa/Sola bükülme
+
+    // Transform efekti uygula
+    content.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(0.999)`;
+
+    // Efekti geri döndür (örneğin 300ms sonra)
+    setTimeout(() => {
+      content.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+    }, 100);
+  });
+
+  // Mobil cihazlar için touch desteği
+  document.body.addEventListener('touchstart', (event) => {
+    const touch = event.touches[0];
+    const { clientX, clientY } = touch;
+    const { innerWidth, innerHeight } = window;
+
+    const rotateX = ((clientY / innerHeight) - 0.9) * -30;
+    const rotateY = ((clientX / innerWidth) - 0.9) * 30;
+
+    content.style.transform = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(0.999)`;
+
+    setTimeout(() => {
+      content.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg) scale(1)';
+    }, 150);
+  });
+
+</script>
 </html>
