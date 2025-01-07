@@ -1,9 +1,6 @@
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-
-  <!-- add mobile view support -->
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>dont.do</title>
 
@@ -35,8 +32,9 @@
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
   gtag('config', 'G-7XTHM9SE3N');
-</script>
-<script>
-  window.location.replace = 'https://dont.do/overthink';
+
+  document.addEventListener("DOMContentLoaded", function() {
+    window.location.replace('https://dont.do/overthink');
+  });
 </script>
 </html>
